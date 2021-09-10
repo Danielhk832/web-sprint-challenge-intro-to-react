@@ -20,15 +20,15 @@ const App = () => {
     axios.get('https://swapi.dev/api/people') 
     .then(res => {
       getCharacters(res.data)
-      console.log(characters)
+      
     })
 }, [])
-
+console.log(characters)
   return (
       <div className="App"> 
         <h1 className="Header">Characters</h1>
       { characters.map(ch => {
-        return <Character name={ch.name} bday={ch.birth_year} gender={ch.gender} />
+        return <Character name={ch.name} bday={ch.birth_year} gender={ch.gender} films={ch.films}/>
       })
       }
       </div>
