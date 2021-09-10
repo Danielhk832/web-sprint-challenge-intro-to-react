@@ -1,6 +1,5 @@
 // Write your Character component here
-import styled from 'styled-components';
-import gsap from 'gsap';
+import styled from "styled-components";
 
 const Styling = styled.div`
     display
@@ -38,24 +37,24 @@ const Styling = styled.div`
         padding: 0;
         font-size: 1.35rem;
     }
-`
+`;
 
 export default function Details(props) {
-    const {name, bday, gender, films} = props;
-    console.log(films)
-    return(
-        <Styling>
-            <div className="container">
-                <h2>{name}</h2>
-                <p>Birth year: {bday}</p>
-                <p>Gender: {gender}</p>
-                <h3>Appeared in: </h3>
-                <ul>
-                    {films.map((film) => {
-                        return <li>{film}</li>
-                    })}
-                </ul>
-            </div>
-        </Styling>
-    )
+  const { name, bday, gender, films } = props;
+
+  return (
+    <Styling>
+      <div className="container">
+        <h2>{name}</h2>
+        <p>Birth year: {bday}</p>
+        <p>Gender: {gender}</p>
+        <h3>Appeared in: </h3>
+        <ul>
+          {films.map((film, idx) => {
+            return <li key={idx}>{film}</li>;
+          })}
+        </ul>
+      </div>
+    </Styling>
+  );
 }
